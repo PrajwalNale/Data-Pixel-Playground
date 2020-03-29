@@ -1,0 +1,40 @@
+import DataPixels from "./DataPixels.js";
+
+function createMinion(isMinion = true) {
+
+    const mainColor = (isMinion) ? "255, 0, 0" : "0, 180, 0";
+
+    const C = mainColor;        
+    const B = "50, 30, 210";     
+    const S = "0, 0, 0"; 
+    const O = "0, 0, 255";      
+    const Y = "255, 255, 0";         
+    const W = "255, 255, 255";  
+    const _ = "0, 0, 0, 0";  
+    const G = "128, 128, 128";   
+
+    return [[_, _, _, Y, Y, Y, Y, Y, _, _, _, _],
+            [_, _, Y, Y, G, G, G, Y, Y, _, _, _],
+            [_, Y, Y, G, W, W, W, G, Y, Y, _, _], 
+            [_, S, S, G, W, S, W, G, S, S, _, _],
+            [_, Y, Y, G, W, W, W, G, Y, Y, _, _],
+            [_, Y, Y, Y, G, G, G, Y, Y, Y, _, _],
+            [_, Y, Y, Y, Y, Y, Y, Y, Y, Y, _, _],
+            [_, B, Y, Y, S, S, S, Y, Y, B, _, _],
+            [_, Y, B, Y, Y, Y, Y, Y, B, Y, _, _], 
+            [_, Y, Y, B, B, B, B, B, Y, Y, _, _],
+            [_, Y, Y, B, B, B, B, B, Y, Y, _, _],
+            [_, Y, B, B, O, O, O, B, B, Y, _, _],
+            [S, S, B, B, B, O, B, B, B, S, S, _],
+            [_, S, B, B, B, B, B, B, B, S, _, _],
+            [_, _, _, S, S, _, S, S, _, _, _, _],
+            [_, _, S, S, S, _, S, S, S, _, _, _]];
+}
+
+
+const pixelSize = 30;
+
+const brother = new DataPixels(createMinion(true), pixelSize).canvas;
+brother.style.filter = "drop-shadow(0 10px 20px #000000)";
+
+document.body.appendChild(brother);

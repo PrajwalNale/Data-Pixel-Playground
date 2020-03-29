@@ -1,0 +1,49 @@
+import DataPixels from "./DataPixels.js";
+
+/**
+ * @description Creates a Mario or Luigi pixelData object
+ * @param {boolean} isMario - Defines the brother's hat and shirt color.  Mario is red and Luigi is green. 
+ * 
+ */
+function createMarioBrother(isMario = true) {
+
+    const mainColor = (isMario) ? "255, 0, 0" : "0, 180, 0";
+
+    const C = mainColor;        //Hat & Shirt
+    const B = "100, 50, 0";     //Brown Hair & Boots
+    const S = "255, 200, 150";  //Skin Tone
+    const O = "0, 0, 255";      //Blue Overalls
+    const G = "0, 255, 0, 255";    //Yellow Buckles       
+    const b = "0, 0, 0";  //White Gloves
+    const _ = "0, 0, 0, 0";     //Transparent (RGBA Format)
+
+    return [[_, _, _, _, b, b, b, b, b, b, b, _, _, _, _,],
+            [_, _, _, b, C, C, C, C, C, C, C, b, _, _, _,],
+            [_, _, _, b, b, C, C, C, C, C, b, b, _, _, _,],
+            [_, _, b, C, C, b, b, b, b, b, C, C, b, _, _,],
+            [_, _, b, C, C, C, C, C, b, C, C, C, b, _, _,],
+            [_, b, C, b, C, C, C, b, C, C, C, C, C, b, _,],
+            [_, b, C, C, b, C, b, C, C, C, C, C, b, b, _,],
+            [_, _, b, C, C, b, b, C, C, C, C, b, b, _, _,],
+            [_, _, b, C, C, C, C, b, C, C, b, C, b, _, _,],
+            [_, _, _, b, C, C, C, C, b, b, C, b, _, _, _,],
+            [_, _, b, b, b, b, b, b, b, b, b, b, _, _, _,],
+            [_, b, G, G, G, G, G, G, G, G, G, G, b, _, _,],   
+            [_, _, _, b, b, b, b, G, b, b, b, b, _, _, _,],
+            [_, _, _, _, _, _, b, G, b, b, G, G, b, _, _,],
+            [_, _, _, _, _, _, b, G, b, G, G, G, G, b, _,],
+            [_, _, _, _, _, _, b, G, G, b, b, b, b, G, b,],
+            [_, _, _, _, _, _, b, G, b, b, G, G, G, b, _,],
+            [_, _, _, _, _, _, b, G, b, _, b, b, b, _, _,]];
+}
+
+/*
+ * Create and append a Mario Brother canvas instance
+ * 
+ */
+const pixelSize = 20;
+
+const brother = new DataPixels(createMarioBrother(true), pixelSize).canvas;
+brother.style.filter = "drop-shadow(0 10px 20px #000000)";
+
+document.body.appendChild(brother);
