@@ -1,2 +1,3 @@
 # Data-Pixel-Playground
-Pixel code for Minion,rose,mario,hearts etc
+Use the "data pixel playground" to create amazing pixel art. 
+here are some Pixel codes for Minion,rose,mario bros,hearts etc
